@@ -529,14 +529,14 @@ void Cocoa_HandleMouseWheel(SDL_Window *window, NSEvent *event)
        For continuous scroll events from trackpads, send fractional deltas for smoother scrolling. */
     if (![event hasPreciseScrollingDeltas]) {
         if (x > 0) {
-            x = SDL_ceil(x);
+            x = 1;
         } else if (x < 0) {
-            x = SDL_floor(x);
+            x = -1;
         }
         if (y > 0) {
-            y = SDL_ceil(y);
+            y = 1;
         } else if (y < 0) {
-            y = SDL_floor(y);
+            y = -1;
         }
     }
 
